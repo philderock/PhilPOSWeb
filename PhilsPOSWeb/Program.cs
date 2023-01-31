@@ -12,7 +12,7 @@ namespace PhilsPOSWeb
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            var connectionString = builder.Configuration.GetConnectionString("PosConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+            var connectionString = builder.Configuration.GetConnectionString("PosConnection") ?? throw new InvalidOperationException("Connection string 'PosConnection' not found.");
             builder.Services.AddDbContext<PosDbContext>(options =>
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
